@@ -1,7 +1,7 @@
 package nl.codecraftr.scala.kata
 
 object Main extends App {
-    private def fizzBuzz =
+    def fizzBuzz =
         (1 to 100)
             .map(transform)
 
