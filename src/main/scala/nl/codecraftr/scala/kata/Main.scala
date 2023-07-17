@@ -1,13 +1,19 @@
 package nl.codecraftr.scala.kata
 
 object Main extends App {
-    private def fizzBuzz = {
+    private def fizzBuzz =
         (1 to 100)
             .map(transform)
-            .foreach(println)
+
+    private def transform(number: Int) = {
+        if (number % 15 == 0)
+            "FizzBuzz"
+        else if (number % 3 == 0)
+            "Fizz"
+        else if (number % 5 == 0)
+            "Buzz"
+        else number.toString
     }
 
-    private def transform(number: Int) = number.toString
-
-    fizzBuzz
+    fizzBuzz.foreach(println)
 }
