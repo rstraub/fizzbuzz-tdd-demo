@@ -5,15 +5,13 @@ object Main extends App {
         (1 to 100)
             .map(transform)
 
-    private def transform(number: Int) = {
-        if (number % 15 == 0)
-            "FizzBuzz"
-        else if (number % 3 == 0)
-            "Fizz"
-        else if (number % 5 == 0)
-            "Buzz"
-        else number.toString
-    }
+    private def transform(number: Int) =
+        number match {
+            case x if x % 15 == 0 => "FizzBuzz"
+            case x if x % 5 == 0 => "Buzz"
+            case x if x % 3 == 0 => "Fizz"
+            case x => x.toString
+        }
 
     fizzBuzz.foreach(println)
 }
